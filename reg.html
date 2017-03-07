@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h1>
+線上報名表單
+</h1>
+<script type="text/javascript">
+function check{
+	if(reg.username.value==""){
+		alert("Please enter your name");
+		}else if(reg.school.value==""){
+			alert("Please select your department");
+			}else if(reg.tele.value==""){
+				alert("Please enter your phone number");
+				}else if(reg.ema.value==""){
+				alert("Please enter your E-mail address");
+				}else reg.submit();
+	}
+	function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+</script>
+
+<form name="reg" method="post" action="https://docs.google.com/forms/d/e/1FAIpQLScM4B6u7nOkNQqUOlSBn7fKXm5cjuno14nyCKRlA4XyjSY9Qg/formResponse">
+  <label for="username">姓名</label><br>
+  <input name="entry.1339495092" type="text" id="username" placeholder="請輸入姓名" ><br>
+
+  <label for="school">學院</label><br>
+        <select name="entry.1944781450" id="school">
+        	<option value="" selected>請選擇</option>
+           <option value="文學院">文學院</option>
+           <option value="理學院">理學院</option>
+            <option value="社會科學學院">社會科學學院</option>
+            <option value="法學院">法學院</option>
+            <option value="商學院">商學院</option>
+            <option value="外國語文學院">外國語文學院</option>
+            <option value="傳播學院">傳播學院</option>
+            <option value="國際事務學院">國際事務學院</option>
+            <option value="教育學院">教育學院</option>
+        </select><br>
+   <label for="tele">手機</label><br>
+   <input type="text" id="tele" placeholder="請輸入手機號碼" name="entry.795504394" maxlength="10" onkeypress="return isNumber(event)"><br>
+   <label for="ema">E-mail</label><br>
+   <input type="email" id="ema" placeholder="請輸入email" name="entry.560282373"><br>
+   
+        
+<label for="birthday">生日</label><br>
+<input type="date" id="birthday" name="entry.324774019" min="1980-01-01" max="2017-03-08">
+<input type="hidden" id="myNumber" name="entry.189820201" value="104301021">
+<br>
+<input type="button" value="送出" onClick="check()">
+</form>
+</body>
+</html>
