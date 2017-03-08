@@ -9,17 +9,6 @@
 <h1>
 線上報名表單
 </h1>
-<script type="text/javascript">
-	function isNumber(evt) {
-    evt = (evt) ? evt : window.event;
-    var charCode = (evt.which) ? evt.which : evt.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        return false;
-    }
-    return true;
-}
-</script>
-
 <form name="reg" method="post" action="https://docs.google.com/forms/d/e/1FAIpQLScM4B6u7nOkNQqUOlSBn7fKXm5cjuno14nyCKRlA4XyjSY9Qg/formResponse"
       onsubmit="">
   <label for="username">姓名</label><br>
@@ -39,7 +28,7 @@
             <option value="教育學院">教育學院</option>
         </select><br>
    <label for="tele">手機</label><br>
-   <input type="text" required  id="tele" placeholder="請輸入手機號碼" name="entry.795504394" maxlength="10" onkeypress="return isNumber(event)"><br>
+   <input type="text" required onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
    <label for="ema">E-mail</label><br>
    <input type="email" required id="ema" placeholder="請輸入email" name="entry.560282373"><br>
    
